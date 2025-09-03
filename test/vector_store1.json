@@ -1,0 +1,18 @@
+[
+    {
+      "cliente": "Banco Central",
+      "tecnologia": "Blockchain",
+      "actuacion": "Implementación de un sistema seguro de pagos interbancarios."
+    },
+    {
+      "cliente": "Hospital General",
+      "tecnologia": "Inteligencia Artificial",
+      "actuacion": "Optimización del diagnóstico por imágenes médicas."
+    },
+    {
+      "cliente": "RetailMax",
+      "tecnologia": "Big Data",
+      "actuacion": "Análisis de comportamiento de compra para personalización de ofertas."
+    }
+  ]
+  

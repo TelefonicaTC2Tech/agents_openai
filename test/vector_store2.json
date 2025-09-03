@@ -1,0 +1,18 @@
+[
+    {
+      "cliente": "Banco Central",
+      "ubicacion": "Madrid, España",
+      "numero_empleados": 2500
+    },
+    {
+      "cliente": "Hospital General",
+      "ubicacion": "Barcelona, España",
+      "numero_empleados": 1200
+    },
+    {
+      "cliente": "RetailMax",
+      "ubicacion": "Valencia, España",
+      "numero_empleados": 800
+    }
+  ]
+  

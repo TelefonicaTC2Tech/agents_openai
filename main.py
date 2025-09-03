@@ -5,8 +5,8 @@ from dotenv import load_dotenv
 from contextlib import asynccontextmanager
 from pathlib import Path
 
-from agents import Runner, SQLiteSession, enable_verbose_stdout_logging
-from agents_config import triage_agent, mcp_stdio
+from agents import Runner, SQLiteSession, OpenAIConversationsSession
+from custom_agents.agents_config import triage_agent, mcp_stdio
 
 # ---------------------------
 # Cargar .env
@@ -47,8 +47,13 @@ async def chat_endpoint(req: ChatRequest):
 async def chat_mem_endpoint(req: ChatRequestMem):
     
     db_path = Path("memory/threads.db")
-    session = SQLiteSession(req.session_id, db_path=db_path)
     
+    
+    session = SQLiteSession(req.session_id, db_path=db_path)
+
+    # Gestión de conversación por openai:
+    # session = OpenAIConversationsSession(conversation_id="conv_68b804f7fff08196a3eb984a880b66c708309c622b9bba8c")
+
     result = await Runner.run(
         triage_agent,
         req.message,

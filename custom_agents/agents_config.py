@@ -1,8 +1,9 @@
 from agents import Agent, function_tool, ModelSettings, SQLiteSession
 from agents.mcp import MCPServerStdio
-from greet_tool import greet_tool
-from length_tool import text_length_tool
+from tools.greet_tool import greet_tool
+from tools.length_tool import text_length_tool
 from pathlib import Path
+from custom_agents.vs_agent import vs_agent
 
 # ---------------------------
 # MCP Server
@@ -10,7 +11,7 @@ from pathlib import Path
 mcp_stdio = MCPServerStdio(
     params={
         "command": "python3",
-        "args": ["mcp_server.py"],
+        "args": ["./mcp/mcp_server.py"],
     }
 )
 
@@ -117,5 +118,11 @@ triage_agent.tools.append(
     context_agent.as_tool(
         tool_name="get_context",
         tool_description="Obtiene un resumen del contexto de la conversación"
+    )
+)
+triage_agent.tools.append(
+    vs_agent.as_tool(
+        tool_name="get_knowledge",
+        tool_description="Obtiene información exacta de los clientes desde los vector stores"
     )
 )

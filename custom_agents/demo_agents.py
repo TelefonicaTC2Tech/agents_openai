@@ -2,7 +2,7 @@ import sys
 import asyncio
 from agents import run_demo_loop
 from dotenv import load_dotenv
-from agents_config import (
+from custom_agents.agents_config import (
     mcp_stdio,
     triage_agent,
     practical_agent,
